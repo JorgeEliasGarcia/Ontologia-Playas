@@ -1,0 +1,760 @@
+@prefix : <urn:oasis:names:tc:entity:xmlns:xml:catalog> .
+@prefix db: <https://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix estur: <https://ontologia.segittur.es/turismo/def/core#> .
+@prefix nskos: <https://invented/jorgesergio/skos#> .
+@prefix invent: <http://invented/jorgesergio#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://invent/jorgesergio.org/ontologia/playas> .
+
+<https://invent/jorgesergio.org/ontologia/playas> rdf:type owl:Ontology ;
+                                                  
+                                                  dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://invented/jorgesergio#hasBeachEventType
+
+invent:hasBeachEventType rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:domain invent:BeachEvent ;
+                         
+                         rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+
+###  http://invented/jorgesergio#hasBeachScenicEnviromentType
+
+invent:hasBeachScenicEnviromentType rdf:type owl:ObjectProperty ;
+                                    
+                                    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                    
+                                    rdfs:domain estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasBeachSeaWavesType
+
+invent:hasBeachSeaWavesType rdf:type owl:ObjectProperty ;
+                            
+                            rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                            
+                            rdfs:domain estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasBeachSedimentType
+
+invent:hasBeachSedimentType rdf:type owl:ObjectProperty ;
+                            
+                            rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                            
+                            rdfs:domain estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasBeachUsageType
+
+invent:hasBeachUsageType rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+                         
+                         rdfs:domain estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasClient
+
+invent:hasClient rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain invent:PrivateService ;
+                 
+                 rdfs:range foaf:Agent .
+
+
+
+###  http://invented/jorgesergio#hasEventOrganisationCompany
+
+invent:hasEventOrganisationCompany rdf:type owl:ObjectProperty ;
+                                   
+                                   rdfs:domain estur:Event ;
+                                   
+                                   rdfs:range estur:EventOrganisationCompany .
+
+
+
+###  http://invented/jorgesergio#hasPhysicalObject
+
+invent:hasPhysicalObject rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:range invent:PhysicalObject ;
+                         
+                         rdfs:domain invent:PrivateService .
+
+
+
+###  http://invented/jorgesergio#hasPlaceIn
+
+invent:hasPlaceIn rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:domain invent:BeachEvent ;
+                  
+                  rdfs:range estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasReducedMobilityFacility
+
+invent:hasReducedMobilityFacility rdf:type owl:ObjectProperty ;
+                                  
+                                  rdfs:range invent:ReducedMobilityFacility ;
+                                  
+                                  rdfs:domain estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasSafetyMeasures
+
+invent:hasSafetyMeasures rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:range invent:SafetyMeasures ;
+                         
+                         rdfs:domain estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasService
+
+invent:hasService rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range invent:Service ;
+                  
+                  rdfs:domain estur:Beach .
+
+
+
+###  http://invented/jorgesergio#hasSuplier
+
+invent:hasSuplier rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:domain invent:PrivateService ;
+                  
+                  rdfs:range foaf:Agent .
+
+
+
+###  http://invented/jorgesergio#hasTourismOrRelatedFacility
+
+invent:hasTourismOrRelatedFacility rdf:type owl:ObjectProperty ;
+                                   
+                                   rdfs:domain estur:Beach ;
+                                   
+                                   rdfs:range estur:TourismOrRelatedFacility .
+
+
+
+###  http://invented/jorgesergio#hasWaveExposure
+
+invent:hasWaveExposure rdf:type owl:ObjectProperty ;
+                       
+                       rdfs:range invent:WaveExposure ;
+                       
+                       rdfs:domain estur:Beach .
+
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#partOf
+
+<http://www.co-ode.org/ontologies/ont.owl#partOf> rdf:type owl:ObjectProperty ;
+                                                  
+                                                  rdfs:range db:Municipality ;
+                                                  
+                                                  rdfs:domain estur:Beach .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:ObjectProperty .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#hasAcknowledgement
+
+estur:hasAcknowledgement rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:range estur:Acknowledgement ;
+                         
+                         rdfs:domain estur:Beach .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#hasOpeningHours
+
+estur:hasOpeningHours rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:range estur:OpeningHours ;
+                      
+                      rdfs:domain estur:TourismEntitiy .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#hasPriceSpecification
+
+estur:hasPriceSpecification rdf:type owl:ObjectProperty ;
+                            
+                            rdfs:domain invent:PrivateService ;
+                            
+                            rdfs:range estur:PriceSpecification .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#offersAdditionalTransportInfrastructureService
+
+estur:offersAdditionalTransportInfrastructureService rdf:type owl:ObjectProperty ;
+                                                     
+                                                     rdfs:domain estur:Beach ;
+                                                     
+                                                     rdfs:range estur:TransportInfrastructure .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://invented/jorgesergio#beachFlagColor
+
+invent:beachFlagColor rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:range xsd:string ;
+                      
+                      rdfs:domain estur:Beach .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://invented/jorgesergio#AdaptedDressRoom
+
+invent:AdaptedDressRoom rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf invent:ReducedMobilityFacility .
+
+
+
+###  http://invented/jorgesergio#AdaptedPublicShower
+
+invent:AdaptedPublicShower rdf:type owl:Class ;
+                           
+                           rdfs:subClassOf invent:PublicShower .
+
+
+
+###  http://invented/jorgesergio#AmbientalQualityCertification
+
+invent:AmbientalQualityCertification rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf estur:Certification .
+
+
+
+###  http://invented/jorgesergio#AmphibiousChair
+
+invent:AmphibiousChair rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf invent:ReducedMobilityFacility .
+
+
+
+###  http://invented/jorgesergio#BeachEvent
+
+invent:BeachEvent rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf estur:Event ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty invent:hasBeachEventType ;
+                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                        owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                               owl:hasValue nskos:BeachEventType
+                                                                             ]
+                                                                           )
+                                                      ]
+                                  ] .
+
+
+
+###  http://invented/jorgesergio#BeachSoccerField
+
+invent:BeachSoccerField rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf estur:SportFacility .
+
+
+
+###  http://invented/jorgesergio#BeachUmbrella
+
+invent:BeachUmbrella rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf invent:PhysicalObject .
+
+
+
+###  http://invented/jorgesergio#BeachUmbrellaService
+
+invent:BeachUmbrellaService rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf invent:PrivateService ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty invent:hasPhysicalObject ;
+                                              owl:allValuesFrom invent:BeachUmbrella
+                                            ] .
+
+
+
+###  http://invented/jorgesergio#BeachVolleyField
+
+invent:BeachVolleyField rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf estur:SportFacility .
+
+
+
+###  http://invented/jorgesergio#LifeguardService
+
+invent:LifeguardService rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf invent:SafetyMeasures ,
+                                        estur:PublicService .
+
+
+
+###  http://invented/jorgesergio#PhysicalObject
+
+invent:PhysicalObject rdf:type owl:Class .
+
+
+
+###  http://invented/jorgesergio#PrivateService
+
+invent:PrivateService rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf invent:Service .
+
+
+
+###  http://invented/jorgesergio#PublicFootwash
+
+invent:PublicFootwash rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf estur:PublicService .
+
+
+
+###  http://invented/jorgesergio#PublicShower
+
+invent:PublicShower rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf estur:PublicService .
+
+
+
+###  http://invented/jorgesergio#ReducedMobilityFacility
+
+invent:ReducedMobilityFacility rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf estur:PublicService .
+
+
+
+###  http://invented/jorgesergio#SafetyMeasures
+
+invent:SafetyMeasures rdf:type owl:Class .
+
+
+
+###  http://invented/jorgesergio#Service
+
+invent:Service rdf:type owl:Class ;
+               
+               rdfs:subClassOf estur:TourismEntitiy .
+
+
+
+###  http://invented/jorgesergio#SwimmingBoundaryBuoys
+
+invent:SwimmingBoundaryBuoys rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf invent:SafetyMeasures .
+
+
+
+###  http://invented/jorgesergio#TuristicQualityCertification
+
+invent:TuristicQualityCertification rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf estur:Certification .
+
+
+
+###  http://invented/jorgesergio#WaveExposed
+
+invent:WaveExposed rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf invent:WaveExposure .
+
+
+
+###  http://invented/jorgesergio#WaveExposure
+
+invent:WaveExposure rdf:type owl:Class .
+
+
+
+###  http://invented/jorgesergio#WaveSemiExposed
+
+invent:WaveSemiExposed rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf invent:WaveExposure .
+
+
+
+###  http://invented/jorgesergio#WheelchairPathway
+
+invent:WheelchairPathway rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf invent:ReducedMobilityFacility .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class .
+
+
+
+###  http://xmlns.com/foaf/spec/#Agent
+
+foaf:Agent rdf:type owl:Class .
+
+
+
+###  https://dbpedia.org/ontology/Municipality
+
+db:Municipality rdf:type owl:Class .
+
+
+
+###  https://invent/jorgesergio.org/ontologia/playas#WaveProtected
+
+<https://invent/jorgesergio.org/ontologia/playas#WaveProtected> rdf:type owl:Class ;
+                                                                
+                                                                rdfs:subClassOf invent:WaveExposure .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#Acknowledgement
+
+estur:Acknowledgement rdf:type owl:Class .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#Beach
+
+estur:Beach rdf:type owl:Class ;
+            
+            rdfs:subClassOf estur:NaturalResource ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty invent:hasBeachSeaWavesType ;
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                  owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                         owl:hasValue nskos:BeachSeaWavesType
+                                                                       ]
+                                                                     )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty invent:hasBeachUsageType ;
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                  owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                         owl:hasValue nskos:BeachUsageType
+                                                                       ]
+                                                                     )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty invent:hasBeachScenicEnviromentType ;
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                  owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                         owl:hasValue nskos:BeachScenicEnviromentType
+                                                                       ]
+                                                                     )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty invent:hasBeachSedimentType ;
+                              owl:allValuesFrom [ rdf:type owl:Class ;
+                                                  owl:intersectionOf ( <http://www.w3.org/2004/02/skos/core#Concept>
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                         owl:hasValue nskos:BeachSedimentType
+                                                                       ]
+                                                                     )
+                                                ]
+                            ] .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#BeachBar
+
+estur:BeachBar rdf:type owl:Class ;
+               
+               rdfs:subClassOf estur:PartyAndEntertainmentFacility .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#CaravanArea
+
+estur:CaravanArea rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf estur:TransportInfrastructure .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#Certification
+
+estur:Certification rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf estur:Acknowledgement .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#ChillOut
+
+estur:ChillOut rdf:type owl:Class ;
+               
+               rdfs:subClassOf estur:PartyAndEntertainmentFacility .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#Event
+
+estur:Event rdf:type owl:Class ;
+            
+            rdfs:subClassOf estur:TourismEntitiy .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#EventOrganisationCompany
+
+estur:EventOrganisationCompany rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf estur:TourismOrganisation .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#NaturalResource
+
+estur:NaturalResource rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf estur:TourismResource .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#OpeningHours
+
+estur:OpeningHours rdf:type owl:Class .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#ParkingFacility
+
+estur:ParkingFacility rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf estur:TransportInfrastructure .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#PartyAndEntertainmentFacility
+
+estur:PartyAndEntertainmentFacility rdf:type owl:Class ;
+                                    
+                                    rdfs:subClassOf estur:TourismOrRelatedFacility .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#PriceSpecification
+
+estur:PriceSpecification rdf:type owl:Class .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#PublicRestroom
+
+estur:PublicRestroom rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf estur:PublicService .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#PublicService
+
+estur:PublicService rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf invent:Service .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#PublicTransportStop
+
+estur:PublicTransportStop rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf estur:TransportInfrastructure .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#SportFacility
+
+estur:SportFacility rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf estur:TourismOrRelatedFacility .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#TourismEntitiy
+
+estur:TourismEntitiy rdf:type owl:Class ;
+                     
+                     rdfs:subClassOf owl:Thing .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#TourismOrRelatedFacility
+
+estur:TourismOrRelatedFacility rdf:type owl:Class ;
+                               
+                               rdfs:subClassOf estur:TourismEntitiy .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#TourismOrganisation
+
+estur:TourismOrganisation rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf estur:TourismEntitiy .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#TourismResource
+
+estur:TourismResource rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf estur:TourismEntitiy .
+
+
+
+###  https://ontologia.segittur.es/turismo/def/core#TransportInfrastructure
+
+estur:TransportInfrastructure rdf:type owl:Class ;
+                              
+                              rdfs:subClassOf estur:TourismEntitiy .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  https://invented/jorgesergio/skos#BeachEventType
+
+nskos:BeachEventType rdf:type owl:NamedIndividual .
+
+
+
+###  https://invented/jorgesergio/skos#BeachScenicEnviromentType
+
+nskos:BeachScenicEnviromentType rdf:type owl:NamedIndividual .
+
+
+
+###  https://invented/jorgesergio/skos#BeachSeaWavesType
+
+nskos:BeachSeaWavesType rdf:type owl:NamedIndividual .
+
+
+
+###  https://invented/jorgesergio/skos#BeachSedimentType
+
+nskos:BeachSedimentType rdf:type owl:NamedIndividual .
+
+
+
+###  https://invented/jorgesergio/skos#BeachUsageType
+
+nskos:BeachUsageType rdf:type owl:NamedIndividual .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( invent:WaveExposed
+                invent:WaveSemiExposed
+                <https://invent/jorgesergio.org/ontologia/playas#WaveProtected>
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
